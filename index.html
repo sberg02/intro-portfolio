@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/*  For Graded Exercise 3 you can concentrate on the HTML portion of this page. You do not have to understand the CSS, or 
+modify any of the CSS in this file. 
+
+For the Final Project, you will be expected to get into the CSS part of the code and make modifications to the style of the page. 
+And you will need to replace the three images on the page with your own. You will also be adding your short biography and a short
+resume, and modifying one of the sections to display links to your portfolio projects.
+
+The scrolling effect happens when we set the height of the parallax container to 100% and also apply height: 100%
+ to both <html> and <body> elements. The parallax containers are bgimg-1, bgimg-2 and bgimg-3  
+ For now, it is not important to understand how this effect is coded, we are concentrating on having you make small
+ modifications to this page. As you go through the courses you will understand more and more of this initial project. 
+ 
+ */
+
+* {box-sizing: border-box}
+ 
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("sky.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("desert.jpg");
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bgimg-3 {
+  background-image: url("computer.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.html {width: 50%; background-color: rgb(144, 220, 255);}
+.css {width: 40%; background-color: #ffd4a4;}
+.js {width: 20%; background-color: #ffbaba;}
+.php {width: 0%; background-color: #b3ffbd;}
+
+nav {
+  font: 400 25px/1.8 "Lato", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(232, 232, 232);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:#111;
+}
+
+.resume {
+  text-align: center;
+  color: #f7f7f7;
+  background-color: transparent;
+  font-size: 20px;
+  margin-top: 18px;
+  margin-bottom: 0;
+  letter-spacing: 5px;
+  width: 100%;
+}
+
+.resume-content {
+  width: 50%;
+  padding: 10px;
+}
+
+#resume-list {
+  list-style-type: disc;
+  background-color: transparent;
+  margin: auto;
+  padding: 12px;
+  padding-top: 5px;
+}
+
+.content-container {
+  display: flex;
+  justify-content:baseline;
+  color: #f7f7f7;
+  background-color: transparent;
+  font-size: 12px;
+  padding: 18px;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Do not modify this code. We will learn more about this later */
+
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- This is the first div on the page. Look at the CSS code for the classes bgimg-1, caption and border to get a feel for the 
+styles that are applied to this div. -->
+
+
+<div class="bgimg-1">
+  <!-- This is the horizontal navigation bar at the top of the page. It serves as your portfolio. Over time you 
+  will be adding projects in each of these categories to display to future employers. Make sure this is your 
+best work! The categories correspond to:
+
+    HTML/CSS: Final Project from Intermediate WWW Authoring HTML and CSS 
+    Hobby Website: Final Project from Advanced WWW Authoring HTML and CSS
+    Javascript: Coding project from Javascript class
+    UX Design: Determined in Greg Hervey's class
+    Interaction: Determined in Greg Hervery's class
+     -->
+  <nav>
+    <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">HTML/CSS</a></li>
+    <li><a href="pages/hobby-page.html">Hobby Website</a></li>
+    <li><a href="#about">Javascript</a></li>
+    <li><a href="#about">UX Design</a></li>
+    <li><a href="#about">Interaction</a></li>
+  </ul>
+  </nav>
+  <!-- End navigation bar -->
+
+  <div class="caption">
+  <span class="border">Sam Berg - Web Developer </span>
+  </div>
+</div>
+
+<!-- In the next div the styles are being declared inline with the HTML code. This is a valid method of adding CSS. -->
+
+<div style="color: #f7f7f7;background-color:#303237;text-align:center;padding:50px 80px;text-align: center;">
+  <h3 style="color:#f7f7f7; text-align:center;">About me</h3>
+  <p>Hi! My name is Sam and I'm an entry level front-end web developer based in Austin, Texas. I look forward to 
+   working on challenging team-oriented projects.</p>
+  <p>When not at my computer you can find me travelling and exploring various parks throughout Texas and the world.</p>  
+</div>
+
+<div class="bgimg-2">
+    <div class="resume">MY RESUME</div>
+          <div class="content-container">
+            <div class="resume-content">
+              <span style="font-size: 12pt; font-weight: 500;">Experience</span><br><br>
+              APRIL 2018 - PRESENT<br>Travis County Natural Resources, Austin, TX - <i>Natural Resources Technician</i> 
+              <ul id="resume-list">
+                  <li>Conducting biological rare and endangered species monitoring at the Balcones Canyonlands Preserve, directing and 
+                  implementing problem species control programs, and collecting base-lline survey data on plant and animal species.</li>
+                  <li>Writing technical reports on management activities.</li> 
+                  <li>Creating and maintaining ArcGIS (mapping software) and Microsoft Excel databases for land management activities.</li>
+                  <li>Developing complex plans for large scale, multi-year projects, such as prescribed burning plans, and a preserve-wide 
+                  road improvement project with a multi-million dollar budget.</li>
+                  <li>Conducting land management activities such as habitat restoration, prescribed burning, and road and trail maintenance. 
+                  Often overseeing work done by contractors and other employees.</li>
+                  <li>Patrolling preserve boundaries, observing and reporting violations, and managing preserve neighbor relations.</li>
+              </ul><br>
+              DECEMBER 2015  - APRIL 2018<br>Travis County Parks, Dripping Springs, TX - <i>Park Maintenance Worker Sr.</i>
+              <ul id="resume-list">
+                  <li>Serve as crew lead for up to 10  park maintenance staff.</li>
+                  <li>Ensure park maintenance is done in a timely and satisfactory manner.</li>
+                  <li>Providing customer service to park visitors and ensuring visitors have a positive experience.</li>
+                  <li>Responding to emergencies in the park and coordinating 911 response.</li>
+                  <li>Conducting various land and wildlife management activities.</li>
+              </ul>
+            </div>
+            <div class="resume-content">
+              SEPTEMBER 2014 - SEPTEMBER 2015<br>Shelterbelt Builders, Berkeley, CA - <i>Restoration Technician</i>
+            <ul id="resume-list">
+              <li>Part of a crew working on  large scale habitat restoration projects around the Bay Area.</li>
+              <li>Large scale native planting and invasive plant removal projects.</li>
+              <li>Fire break creation projects, often in remote locations.</li>
+              <li>Trail maintenance and construction projects.</li>
+            </ul><br>
+            MARCH 2014 - AUGUST 2014<br>National Parks Service, Corpus Christi, TX - <i>Biological Science Technician</i>
+            <ul id="resume-list">
+              <li>6 month seasonal position surveying endangered Kemp's ridley sea turtles at Padre Island National Seashore.</li>
+              <li>Monitoring and data collection of nesting sea turtles along the seashore.</li>
+              <li>Interacting with park visitors and responding to emergencies within the park.</li>
+            </ul>
+            <span style="font-size: 12pt; font-weight: 500;">Education</span><br><br>
+            JANUARY 2023 - PRESENT<br>Austin Community College, Online - <i>Web Development certificate program</i>
+            <br>One year program focusing on all elements of front-end development. Seven courses completed include HTML, CSS, Javascript, Interaction Design, UX Design, and a Capstone Project.<br><br> 
+
+            OCTOBER  2022 - PRESENT<br>The Odin Project, Online - <i>Self-paced, open source Web Development curriculum</i>
+            <br>Completed the Foundations course covering HTML, CSS, and Javascript.<br><br>  
+
+
+            SEPTEMBER 2009 - JUNE 2013<br>Bemidji State University, Bemidji, MN - <i>Biology with an emphasis in Wildlife Management</i>
+            <br>Graduated with a Bachelors of Science Degree in 2013.
+          </div>
+    </div>      
+</div>
+
+
+<!-- You should eventually make this your own by modifying the colors used throughout the page. -->
+
+<div class="bgimg-3">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Your Services offered section or
+  Dream Job statement will go here</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#303237;text-align:center;padding:50px 80px;text-align: justify;">
+  <p>My Tech Skills</p>
+  <p>HTML</p>
+<div class="container">
+  <div class="skills html">50%</div>
+</div>
+
+<p>CSS</p>
+<div class="container">
+  <div class="skills css">40%</div>
+</div>
+
+<p>JavaScript</p>
+<div class="container">
+  <div class="skills js">20%</div>
+</div>
+
+<p>PHP</p>
+<div class="container">
+  <div class="skills php">0%</div>
+</div>
+
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+  <span class="border">Your Text Here - This is where your contact me form will live</span>
+  </div>
+</div>
+
+<footer>
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#303237;text-align:center;padding:50px 80px;text-align: justify;">
+  <p>&copy2023 Sam Berg</p>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
